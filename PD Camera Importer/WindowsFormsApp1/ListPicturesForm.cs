@@ -30,7 +30,7 @@ namespace PDCam
             foreach (string file in files)
             {
                 //If this file is a thumbnail
-                if (Path.GetExtension(file).ToUpper() == "THM")
+                if (Path.GetExtension(file).ToUpper() == ".THM")
                 {
                     //If we haven't asked about removing them display a dialog box asking to remove THM files yes/no
                     if (!askedAboutTHMFiles)
