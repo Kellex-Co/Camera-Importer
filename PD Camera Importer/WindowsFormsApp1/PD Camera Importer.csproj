@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C65E451E-B931-4F3E-BB3D-C84628F367ED}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PCCam</RootNamespace>
+    <RootNamespace>PDCam</RootNamespace>
     <AssemblyName>PD Camera Importer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
