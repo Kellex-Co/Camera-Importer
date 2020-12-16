@@ -32,6 +32,7 @@ namespace PDCam
             this.pictureLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@ namespace PDCam
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 694);
@@ -63,6 +65,14 @@ namespace PDCam
             this.button1.Text = "Import!";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.progressBar1.Location = new System.Drawing.Point(0, 0);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(760, 38);
+            this.progressBar1.TabIndex = 1;
             // 
             // ListPicturesForm
             // 
@@ -84,6 +94,7 @@ namespace PDCam
         private System.Windows.Forms.FlowLayoutPanel pictureLayout;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

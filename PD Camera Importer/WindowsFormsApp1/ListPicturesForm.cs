@@ -47,7 +47,7 @@ namespace PDCam
                         {
                             File.Delete(file);
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             MessageBox.Show($"Failed to delete thumbnail \"{Path.GetFileName(file)}\"\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
@@ -98,21 +98,31 @@ namespace PDCam
 
                 //Move all the images.
                 int i = 1;
-                foreach (SelectionBox sb in pictures)
-                {
-                    if (sb.m_checkBox.Checked)
-                    {
-                        string file = sb.m_file;
-                        string destination = Path.Combine(directory, $"{namePrefix} ({i++}){Path.GetExtension(file)}");
 
-                        try
+                int count = pictures.Count(new Func<SelectionBox, bool>((sb) => sb.m_checkBox.Checked));
+                if (count > 0)
+                {
+                    progressBar1.Maximum = count;
+                    progressBar1.Minimum = 0;
+                    progressBar1.Value = 0;
+                    foreach (SelectionBox sb in pictures)
+                    {
+                        if (sb.m_checkBox.Checked)
                         {
-                            File.Move(file, destination);
-                        }
-                        catch(Exception ex)
-                        {
-                            MessageBox.Show($"Failed to move image \"{Path.GetFileName(file)}\"\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
+                            string file = sb.m_file;
+                            string destination = Path.Combine(directory, $"{namePrefix} ({i++}){Path.GetExtension(file)}");
+
+                            try
+                            {
+                                File.Move(file, destination);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show($"Failed to move image \"{Path.GetFileName(file)}\"\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+                            progressBar1.Value = progressBar1.Value + 1;
                         }
                     }
                 }
