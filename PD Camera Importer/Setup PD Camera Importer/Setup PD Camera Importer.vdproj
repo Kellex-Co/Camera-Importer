@@ -21,18 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D92F2548FAE2B889B8951C181A6D68C9"
-        "OwnerKey" = "8:_D2272C38FBBE4881AD52A7778F103AB9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D92F2548FAE2B889B8951C181A6D68C9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_D2272C38FBBE4881AD52A7778F103AB9"
         "MsmSig" = "8:_UNDEFINED"
@@ -55,6 +43,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -71,6 +67,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -100,37 +112,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D92F2548FAE2B889B8951C181A6D68C9"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-                "ScatterAssemblies"
-                {
-                    "_D92F2548FAE2B889B8951C181A6D68C9"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Net.Http.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_6133AF178F7A4FADAFBF1CDBFCD499A2"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
@@ -188,7 +169,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Setup PD Camera Importer"
         "ProductCode" = "8:{0CD5E9BD-AD58-455B-A5CB-056D893BE191}"
-        "PackageCode" = "8:{C1703608-1744-4E39-BED9-F61471D799B5}"
+        "PackageCode" = "8:{84C87FCA-CF88-4D0F-A520-D87F3A129D51}"
         "UpgradeCode" = "8:{92E64B10-7E13-4949-8C02-932EC3C30BF4}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -196,12 +177,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Kellex"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Setup PD Camera Importer"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Bennett Sewell"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -709,7 +690,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D2272C38FBBE4881AD52A7778F103AB9"
             {
-            "SourcePath" = "8:..\\WindowsFormsApp1\\obj\\Debug\\PD Camera Importer.exe"
+            "SourcePath" = "8:..\\WindowsFormsApp1\\obj\\Release\\PD Camera Importer.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_6133AF178F7A4FADAFBF1CDBFCD499A2"
