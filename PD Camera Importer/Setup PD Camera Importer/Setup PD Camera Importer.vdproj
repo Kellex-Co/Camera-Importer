@@ -167,9 +167,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Setup PD Camera Importer"
+        "ProductName" = "8:PD Camera Importer"
         "ProductCode" = "8:{0CD5E9BD-AD58-455B-A5CB-056D893BE191}"
-        "PackageCode" = "8:{84C87FCA-CF88-4D0F-A520-D87F3A129D51}"
+        "PackageCode" = "8:{C8ED5F22-9A5B-4322-B0FB-57B2B721486F}"
         "UpgradeCode" = "8:{92E64B10-7E13-4949-8C02-932EC3C30BF4}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -690,7 +690,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D2272C38FBBE4881AD52A7778F103AB9"
             {
-            "SourcePath" = "8:..\\WindowsFormsApp1\\obj\\Release\\PD Camera Importer.exe"
+            "SourcePath" = "8:..\\WindowsFormsApp1\\obj\\Debug\\PD Camera Importer.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_6133AF178F7A4FADAFBF1CDBFCD499A2"
