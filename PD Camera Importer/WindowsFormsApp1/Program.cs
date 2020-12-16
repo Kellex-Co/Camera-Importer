@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
 
             for (int i = 0; i < drives.Length; i++)
             {
+                //Any drive that has a DCIM folder at the root of it is a camera.
                 string pathToDCIM = Path.Combine(drives[i], "DCIM");
                 if(Directory.Exists(pathToDCIM))
                 {
@@ -36,9 +37,13 @@ namespace WindowsFormsApp1
                 }
             }
 
-            Application.Run(new ListPicturesForm());
+            //Display all of the photos for selection.
+            Application.Run(new ListPicturesForm(s_allPictureFiles));
         }
 
+        /// <summary>
+        /// Recursively finds all of the files in the DCIM folder.
+        /// </summary>
         static void LoadAllImages(string path)
         {
             foreach (string file in Directory.EnumerateFiles(path))
