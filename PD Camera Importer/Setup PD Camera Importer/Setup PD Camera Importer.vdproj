@@ -56,6 +56,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -194,15 +202,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PD Camera Importer"
-        "ProductCode" = "8:{9CD4B6E8-CFBE-4D98-A484-C2AE0850DF0B}"
-        "PackageCode" = "8:{E1790439-26FA-4C11-81A0-2E89CED7DE83}"
+        "ProductCode" = "8:{AB16F4A6-0892-4584-BF48-DB5A4E50BCA9}"
+        "PackageCode" = "8:{F00FDB59-979B-474B-81ED-C2FD6EBFEA92}"
         "UpgradeCode" = "8:{92E64B10-7E13-4949-8C02-932EC3C30BF4}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.1"
+        "ProductVersion" = "8:1.0.2"
         "Manufacturer" = "8:Kellex"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
