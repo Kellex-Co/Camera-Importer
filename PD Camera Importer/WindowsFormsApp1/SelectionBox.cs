@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,9 +30,9 @@ namespace WindowsFormsApp1
             PictureBox pb = new PictureBox();
             pb.SizeMode = PictureBoxSizeMode.Zoom;
             //Create a copy of the image
-            using (Image original = Image.FromFile(file))
+            using (FileStream img = File.Open(file, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
-                pb.Image = m_image = (Image)original.Clone();
+                pb.Image = m_image = Image.FromStream(img);
             }
             pb.Width = pb.Height = 256;
             pb.Dock = DockStyle.Fill;
