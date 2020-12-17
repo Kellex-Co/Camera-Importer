@@ -130,5 +130,10 @@ namespace PDCam
 
             Close();
         }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
