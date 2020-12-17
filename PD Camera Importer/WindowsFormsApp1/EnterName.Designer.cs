@@ -48,7 +48,7 @@ namespace PDCam
             this.label1.Location = new System.Drawing.Point(22, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 3;
             this.label1.Text = "Please enter the name for the files;";
             // 
             // okBtn
@@ -63,10 +63,11 @@ namespace PDCam
             // 
             // cancelBtn
             // 
+            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelBtn.Location = new System.Drawing.Point(235, 116);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
-            this.cancelBtn.TabIndex = 3;
+            this.cancelBtn.TabIndex = 1;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);

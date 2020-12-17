@@ -64,7 +64,7 @@ namespace PDCam
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(650, 38);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 1;
+            this.progressBar1.TabIndex = 0;
             // 
             // importBtn
             // 
@@ -72,7 +72,7 @@ namespace PDCam
             this.importBtn.Location = new System.Drawing.Point(760, 0);
             this.importBtn.Name = "importBtn";
             this.importBtn.Size = new System.Drawing.Size(110, 38);
-            this.importBtn.TabIndex = 0;
+            this.importBtn.TabIndex = 2;
             this.importBtn.Text = "Import!";
             this.importBtn.UseVisualStyleBackColor = true;
             this.importBtn.Click += new System.EventHandler(this.button1_Click);
@@ -84,7 +84,7 @@ namespace PDCam
             this.cancelBtn.Location = new System.Drawing.Point(650, 0);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(110, 38);
-            this.cancelBtn.TabIndex = 2;
+            this.cancelBtn.TabIndex = 1;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
