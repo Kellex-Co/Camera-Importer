@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PDCam.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,8 @@ namespace PDCam
 
         public ListPicturesForm(List<string> files)
         {
+            Icon = Resources.Kellex_Camera;
+
             //Create a list to store all of the loaded images.
             pictures = new List<SelectionBox>(files.Count);
 

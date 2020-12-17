@@ -59,5 +59,15 @@ namespace PDCam.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Kellex_Camera {
+            get {
+                object obj = ResourceManager.GetObject("Kellex_Camera", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }
