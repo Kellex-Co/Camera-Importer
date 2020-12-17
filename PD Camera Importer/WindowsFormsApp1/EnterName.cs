@@ -18,5 +18,10 @@ namespace PDCam
             DialogResult = DialogResult.OK;
             m_text = textBox1.Text;
         }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
