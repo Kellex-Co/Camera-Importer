@@ -19,9 +19,35 @@ namespace PDCam
 
         private Image m_image;
 
+        /// <summary>
+        /// The path to the thumbnail file.
+        /// </summary>
+        public string m_thumbnailFile;
+
         public SelectionBox(string file, FlowLayoutPanel pictureLayout)
         {
             m_file = file;
+            string fileName = Path.GetFileNameWithoutExtension(m_file);
+
+            //Check to see if this picture has an associated thumbnail file.
+            {
+                DirectoryInfo dir = Directory.GetParent(m_file);
+                FileInfo[] files = dir.GetFiles();
+                for (int f = 0; f < files.Length; f++)
+                {
+                    string thumbFile = files[f].FullName;
+                    string ext = Path.GetExtension(thumbFile).ToUpper();
+                    if (ext == ".THM")
+                    {
+                        string thumbName = Path.GetFileNameWithoutExtension(thumbFile);
+                        if(thumbName == fileName)
+                        {
+                            m_thumbnailFile = thumbFile;
+                            break;
+                        }
+                    }
+                }
+            }
 
             m_panel = new Panel();
             m_panel.Size = new Size(256, 256);

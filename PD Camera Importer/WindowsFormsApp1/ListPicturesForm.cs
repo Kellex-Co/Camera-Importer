@@ -14,21 +14,30 @@ namespace PDCam
 {
     public partial class ListPicturesForm : Form
     {
-        List<SelectionBox> pictures;
+        /// <summary>
+        /// The picture box with selection controls.
+        /// </summary>
+        List<SelectionBox> m_pictures;
+
+        /// <summary>
+        /// A list of all the detected files including thumbnails.
+        /// </summary>
+        List<string> m_allFiles;
+
+        //THM are thumbnail files on a digital camera.
+        //They're essentially useless so if it runs into one it will offer the user a dialog box to remove them.
+        bool m_askedAboutTHMFiles = false;//Have we asked about removing them?
+        bool m_removeTHMFiles = false;//User has requested their deletion.
 
         public ListPicturesForm(List<string> files)
         {
+            m_allFiles = files;
             Icon = Resources.Kellex_Camera;
 
             //Create a list to store all of the loaded images.
-            pictures = new List<SelectionBox>(files.Count);
+            m_pictures = new List<SelectionBox>(files.Count);
 
             InitializeComponent();
-
-            //THM are thumbnail files on a digital camera.
-            //They're essentially useless so if it runs into one it will offer the user a dialog box to remove them.
-            bool askedAboutTHMFiles = false;
-            bool removeTHMFiles = false;
 
             foreach (string file in files)
             {
@@ -36,30 +45,17 @@ namespace PDCam
                 if (Path.GetExtension(file).ToUpper() == ".THM")
                 {
                     //If we haven't asked about removing them display a dialog box asking to remove THM files yes/no
-                    if (!askedAboutTHMFiles)
+                    if (!m_askedAboutTHMFiles)
                     {
-                        askedAboutTHMFiles = true;
+                        m_askedAboutTHMFiles = true;
                         DialogResult result = MessageBox.Show("Do you want this program to remove the THM files?", "Thumbnail files?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        removeTHMFiles = result == DialogResult.Yes;
-                    }
-
-                    //The user responded YES delete all the THM files found.
-                    if (removeTHMFiles)
-                    {
-                        try
-                        {
-                            File.Delete(file);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Failed to delete thumbnail \"{Path.GetFileName(file)}\"\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        m_removeTHMFiles = result == DialogResult.Yes;
                     }
                 }
                 else
                 {
                     //This will create the WinForms controls for displaying the image and checkbox.
-                    pictures.Add(new SelectionBox(file, pictureLayout));
+                    m_pictures.Add(new SelectionBox(file, pictureLayout));
                 }
             }
         }
@@ -67,7 +63,7 @@ namespace PDCam
         //Dispose of all the images when the form is closed.
         private void OnClosed(object sender, FormClosedEventArgs e)
         {
-            foreach (SelectionBox img in pictures)
+            foreach (SelectionBox img in m_pictures)
                 img.Dispose();
         }
 
@@ -102,13 +98,13 @@ namespace PDCam
                 //Move all the images.
                 int i = 1;
 
-                int count = pictures.Count(new Func<SelectionBox, bool>((sb) => sb.m_checkBox.Checked));
+                int count = m_pictures.Count(new Func<SelectionBox, bool>((sb) => sb.m_checkBox.Checked));
                 if (count > 0)
                 {
                     progressBar1.Maximum = count;
                     progressBar1.Minimum = 0;
                     progressBar1.Value = 0;
-                    foreach (SelectionBox sb in pictures)
+                    foreach (SelectionBox sb in m_pictures)
                     {
                         if (sb.m_checkBox.Checked)
                         {
@@ -118,6 +114,19 @@ namespace PDCam
                             try
                             {
                                 File.Move(file, destination);
+
+                                //The user responded YES delete all the THM files found.
+                                if (m_removeTHMFiles && sb.m_thumbnailFile != null)
+                                {
+                                    try
+                                    {
+                                        File.Delete(sb.m_thumbnailFile);
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        MessageBox.Show($"Failed to delete thumbnail \"{Path.GetFileName(sb.m_thumbnailFile)}\"\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
                             }
                             catch (Exception ex)
                             {
