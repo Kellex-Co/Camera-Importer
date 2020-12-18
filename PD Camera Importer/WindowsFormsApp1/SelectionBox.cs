@@ -56,7 +56,7 @@ namespace PDCam
             PictureBox pb = new PictureBox();
             pb.SizeMode = PictureBoxSizeMode.Zoom;
             //Create a copy of the image
-            using (FileStream img = File.Open(file, FileMode.Open, FileAccess.Read, FileShare.Read))
+            using (FileStream img = File.Open(m_thumbnailFile ?? file, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
                 pb.Image = m_image = Image.FromStream(img);
             }
