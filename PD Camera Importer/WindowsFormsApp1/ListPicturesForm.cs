@@ -109,7 +109,16 @@ namespace PDCam
                         if (sb.m_checkBox.Checked)
                         {
                             string file = sb.m_file;
-                            string destination = Path.Combine(directory, $"{namePrefix} ({i++}){Path.GetExtension(file)}");
+                            string destination;
+
+                            do
+                            {
+                                destination = Path.Combine(directory, $"{namePrefix} ({i++}){Path.GetExtension(file)}");
+                            }
+                            //Keep looping until a unique `i` number is found.
+                            while (File.Exists(destination));
+
+
 
                             try
                             {
